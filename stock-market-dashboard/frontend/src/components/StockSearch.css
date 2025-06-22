@@ -1,0 +1,78 @@
+.stock-search-container {
+    margin-top: 0;
+    padding: 15px 20px 1px 20px;
+    background-color: #1a1a2e; /* Darker background for the search box */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Keep it relatively compact */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.input-group input {
+    flex-grow: 1; /* Allow input to take available space */
+    min-width: 200px; /* Minimum width before wrapping */
+}
+
+.input-group button {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    padding: 10px 20px;
+}
+
+.stock-data-display {
+    margin-top: 20px;
+    text-align: left; /* Align text to the left for readability */
+    background-color: #2b2b40;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.stock-data-display h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #64ffda; /* A vibrant color for the symbol */
+}
+
+.stock-data-display p {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    display: flex; /* Use flex to align label and value */
+    justify-content: space-between; /* Space out label and value */
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #333;
+}
+.stock-data-display p:last-child {
+    border-bottom: none; /* No border for the last item */
+}
+
+
+.stock-data-display p span {
+    font-weight: bold;
+}
+
+.price {
+    color: #f7b03c; /* A gold/orange for price */
+    font-size: 1.5rem; /* Larger price font */
+}
+
+.positive {
+    color: #4CAF50; /* Green for positive change */
+}
+
+.negative {
+    color: #f44336; /* Red for negative change */
+}
+
+.error-message {
+    color: #f44336; /* Red for error messages */
+    margin-top: 10px;
+    font-weight: bold;
+}

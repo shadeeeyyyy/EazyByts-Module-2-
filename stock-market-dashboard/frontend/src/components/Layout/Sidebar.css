@@ -1,0 +1,80 @@
+/* frontend/src/components/Layout/Sidebar.css */
+
+.sidebar-container {
+    width: var(--sidebar-width); /* Defined in index.css */
+    min-width: var(--sidebar-width);
+    background-color: var(--bg-secondary);
+    padding: 20px 20px;
+    padding-top: calc(var(--header-height) + 20px); /* Account for header height */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    position: fixed; /* Keep sidebar fixed */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto; /* Enable scrolling if watchlist is long */
+    z-index: 900; /* Below header */
+}
+
+.sidebar-title {
+    color: var(--accent-blue);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.watchlist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between watchlist items */
+}
+
+.watchlist-item {
+    background-color: var(--bg-primary); /* Darker background for each item */
+    border-radius: 8px;
+    padding: 15px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent; /* For hover effect */
+}
+
+.watchlist-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-blue);
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.item-symbol {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.item-price {
+    font-family: 'Roboto Mono', monospace; /* Monospaced font for numbers */
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.item-details {
+    display: flex;
+    justify-content: flex-start; /* Align change percent to start */
+    align-items: center;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.item-change {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+}
+
+/* Colors for positive/negative defined in index.css */

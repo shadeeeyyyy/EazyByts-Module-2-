@@ -1,0 +1,105 @@
+/* frontend/src/index.css */
+
+:root {
+    --bg-primary: #121212; /* Very dark background */
+    --bg-secondary: #1e1e1e; /* Slightly lighter for containers */
+    --text-primary: #e0e0e0;
+    --text-secondary: #b0b0b0;
+    --accent-blue: #00bcd4; /* A teal blue */
+    --accent-green: #4CAF50; /* For positive changes */
+    --accent-red: #f44336; /* For negative changes */
+    --border-color: #333;
+    --header-height: 60px;
+    --sidebar-width: 280px;
+}
+
+/* Basic CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Primary font */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
+}
+
+#root {
+    display: flex;
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: var(--accent-blue);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0097a7; /* Darker shade of accent blue */
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.3);
+}
+
+.positive {
+    color: var(--accent-green);
+}
+
+.negative {
+    color: var(--accent-red);
+}
+
+.neutral {
+    color: var(--text-secondary);
+}
+
+.error-message {
+    color: var(--accent-red);
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}

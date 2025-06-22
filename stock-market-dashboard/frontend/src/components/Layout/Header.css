@@ -1,0 +1,64 @@
+/* frontend/src/components/Layout/Header.css */
+
+.header-container {
+    position: fixed; /* Keep header at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height); /* Defined in index.css */
+    background-color: var(--bg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it stays on top of other content */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #66fCF1;
+    font-weight: 700;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px; /* Space between navigation items */
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px; /* Space for border on hover/active */
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.nav-item.active {
+    color: var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
+}
+
+.user-auth button {
+    margin-left: 15px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.user-auth .login-btn {
+    background-color: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+}
+
+.user-auth .login-btn:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+    color: var(--text-primary);
+}

@@ -1,0 +1,147 @@
+/* frontend/src/components/Dashboard/StockCard.css */
+
+.stock-card {
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.stock-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-blue);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.stock-symbol {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin: 0;
+}
+
+.stock-price-info {
+    text-align: right;
+}
+
+.current-price {
+    font-size: 1.6rem;
+    font-weight: 600;
+    font-family: 'Roboto Mono', monospace;
+    display: block;
+    color: var(--text-primary);
+}
+
+.price-change {
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+    display: block;
+    margin-top: 5px;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sparkline-container {
+    flex-shrink: 0;
+    width: 100px; /* Fixed width for sparkline */
+    height: 30px; /* Fixed height for sparkline */
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden; /* Hide overflow from sparkline path */
+    display: flex; /* For placeholder alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.sparkline {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.sparkline-placeholder {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.stock-details {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.stock-details p {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 3px;
+}
+.stock-details p:last-child {
+    border-bottom: none;
+}
+
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: auto; /* Push actions to the bottom */
+}
+
+.card-actions button {
+    flex: 1; /* Make buttons take equal width */
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.buy-btn {
+    background-color: var(--accent-blue);
+}
+
+.buy-btn:hover:not(:disabled) {
+    background-color: #0097a7;
+}
+
+.watchlist-btn.add {
+    background-color: #5cb85c; /* A different green for add */
+}
+
+.watchlist-btn.add:hover:not(:disabled) {
+    background-color: #4cae4c;
+}
+
+.watchlist-btn.remove {
+    background-color: #d9534f; /* Red for remove */
+}
+
+.watchlist-btn.remove:hover:not(:disabled) {
+    background-color: #c9302c;
+}
+
+.watchlist-btn.disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}

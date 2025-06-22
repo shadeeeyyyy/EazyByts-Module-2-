@@ -1,0 +1,94 @@
+/* frontend/src/App.css */
+
+/* Ensure #root is full height and flex container in index.css */
+
+.main-layout {
+    display: flex;
+    flex-direction: column; /* Stacks header, then main content area */
+    width: 100%;
+    min-height: 100vh;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    /* Occupies remaining space after header, accounts for sidebar margin */
+    min-height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height); /* Push content down below fixed header */
+    margin-left: var(--sidebar-width); /* Push content right of fixed sidebar */
+    /* The padding for content is handled by DashboardOverview's padding */
+    /* flex-grow: 1; is handled by DashboardOverview */
+    overflow-y: auto; /* Allow content area to scroll if it overflows */
+}
+
+/* Basic responsiveness for smaller screens (e.g., hide sidebar/header or change layout) */
+@media (max-width: 1024px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-container {
+        position: relative; /* Make sidebar flow naturally */
+        width: 100%;
+        height: auto;
+        padding-top: 20px; /* Reset padding for non-fixed state */
+        box-shadow: none; /* Remove shadow */
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .content-area {
+        margin-left: 0; /* No sidebar offset */
+        margin-top: var(--header-height); /* Still offset for header */
+    }
+
+    .header-container {
+        padding: 0 20px; /* Slightly less padding on smaller screens */
+        flex-wrap: wrap; /* Allow items to wrap if screen is very narrow */
+        height: auto; /* Adjust height based on content */
+        min-height: var(--header-height);
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-nav {
+        display: none; /* Hide main nav on smaller screens or use a hamburger menu */
+    }
+
+    .user-auth {
+        margin-left: auto; /* Push auth to the right */
+    }
+}
+
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+    .logo, .user-auth {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .user-auth button {
+        margin: 5px 10px;
+    }
+
+    .dashboard-overview-container {
+        padding: 20px;
+    }
+
+    .dashboard-heading {
+        font-size: 1.8rem;
+    }
+
+    .stat-card .card-value {
+        font-size: 2rem;
+    }
+
+    .stat-card .card-change {
+        font-size: 1rem;
+    }
+}

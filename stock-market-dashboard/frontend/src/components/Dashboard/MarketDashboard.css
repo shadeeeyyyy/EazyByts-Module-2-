@@ -1,0 +1,54 @@
+/* frontend/src/components/Dashboard/MarketDashboard.css */
+
+.market-dashboard-container {
+    padding: 20px;
+    background-color: var(--bg-primary); /* Use primary background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin-top: 30px; /* Space from overall dashboard heading */
+}
+
+.market-dashboard-container .dashboard-heading {
+    margin-bottom: 25px; /* Adjust margin for this heading */
+    color: var(--accent-blue);
+}
+
+.update-info {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.stocks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid for cards */
+    gap: 25px; /* Space between cards */
+}
+
+.market-dashboard-loading, .market-dashboard-error {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.market-dashboard-error {
+    color: var(--accent-red);
+    font-weight: bold;
+}
+
+/* Adjustments for responsiveness on smaller screens */
+@media (max-width: 768px) {
+    .market-dashboard-container {
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    .stocks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}

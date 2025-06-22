@@ -1,0 +1,76 @@
+/* frontend/src/pages/Auth.css */
+
+.auth-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--header-height)); /* Account for header */
+    margin-top: var(--header-height); /* Push content below header */
+    padding: 20px;
+    flex-grow: 1; /* Allow it to take up available space */
+    margin-left: 0; /* No sidebar on auth pages */
+}
+
+.auth-form-card {
+    background-color: var(--bg-secondary);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-form-card h2 {
+    color: var(--accent-blue);
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.auth-form-card button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    border-radius: 6px;
+}
+
+.auth-link-text {
+    margin-top: 25px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.auth-link-text a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.auth-link-text a:hover {
+    color: var(--text-primary);
+}

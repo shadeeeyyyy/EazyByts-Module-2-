@@ -1,0 +1,125 @@
+/* frontend/src/pages/ProfilePage.css */
+
+.profile-container {
+    padding: 30px;
+    flex-grow: 1; /* Ensure it expands to fill space */
+    min-height: calc(100vh - var(--header-height));
+    /* Margin handled by App.jsx for content-area */
+}
+
+.profile-card {
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto; /* Center the card */
+    color: var(--text-primary);
+}
+
+.profile-card h2 {
+    font-size: 2.2rem;
+    color: var(--accent-blue);
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.profile-details p:last-of-type {
+    border-bottom: none;
+}
+
+.profile-details strong {
+    color: var(--text-secondary);
+}
+
+.balance-value {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--accent-green); /* Green for positive balance */
+}
+
+.watchlist-section, .stocks-owned-section {
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 30px;
+}
+
+.watchlist-section h3, .stocks-owned-section h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.empty-message {
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+}
+
+.watchlist-list-profile, .stocks-owned-list-profile {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.watchlist-item-profile, .stock-owned-item-profile {
+    background-color: var(--bg-primary);
+    border-radius: 8px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+}
+
+.watchlist-item-profile:hover, .stock-owned-item-profile:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-blue);
+}
+
+.watchlist-item-profile span:first-child,
+.stock-owned-item-profile span:first-child {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+}
+
+.watchlist-item-name {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.stock-owned-item-profile span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.stock-owned-item-profile .purchase-date {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-top: 5px;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 5px;
+}
